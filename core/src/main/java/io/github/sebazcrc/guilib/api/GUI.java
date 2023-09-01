@@ -79,7 +79,7 @@ public abstract class GUI implements Listener {
         InventoryPageHolder holder = getInventoryFrom(e.getInventory());
         if (holder != null) {
             // We are talking about this GUI!
-            GUIOpenEvent openEvent = new GUIOpenEvent(this, holder, getInventoryIndex(holder), e);
+            GUIOpenEvent openEvent = new GUIOpenEvent(this, e, holder, getInventoryIndex(holder));
             Bukkit.getServer().getPluginManager().callEvent(openEvent);
         }
     }
@@ -93,7 +93,7 @@ public abstract class GUI implements Listener {
                     InventoryPageHolder holder = this.getInventoryFrom(e.getPlayer().getOpenInventory().getTopInventory());
                     if (holder == null) {
                         // The player has closed this gui, unregister every listener
-                        GUICloseEvent openEvent = new GUICloseEvent(this, holder, e);
+                        GUICloseEvent openEvent = new GUICloseEvent(this, e, holder);
                         Bukkit.getServer().getPluginManager().callEvent(openEvent);
 
                         this.unregister();

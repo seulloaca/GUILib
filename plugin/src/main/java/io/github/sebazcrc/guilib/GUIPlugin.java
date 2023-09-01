@@ -1,8 +1,10 @@
 package io.github.sebazcrc.guilib;
 
+import io.github.sebazcrc.guilib.api.PagedGUI;
 import io.github.sebazcrc.guilib.api.event.GUICloseEvent;
 import io.github.sebazcrc.guilib.api.event.GUIOpenEvent;
 import io.github.sebazcrc.guilib.api.SinglePagedGUI;
+import io.github.sebazcrc.guilib.api.event.GUITurnPageEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -34,7 +36,7 @@ public class GUIPlugin extends JavaPlugin implements Listener {
             np.setDisplayName(ChatColor.GREEN + "Next page");
             next.setItemMeta(np);
 
-            SinglePagedGUI gui = new SinglePagedGUI(e.getPlayer(), ChatColor.GREEN + "My inventory", 5);
+            PagedGUI gui = new PagedGUI(e.getPlayer(), ChatColor.GREEN + "My inventory", 5, previous, next);
             gui.createInventory();
 
             gui.setItem(10, new ItemStack(Material.APPLE), (click -> {
@@ -54,18 +56,13 @@ public class GUIPlugin extends JavaPlugin implements Listener {
 
             gui.fillWith(Material.GRAY_STAINED_GLASS_PANE);
 
+            gui.addPage(true);
+            gui.setItem(1, 35, new ItemStack(Material.BEDROCK), (event -> {
+                event.getWhoClicked().closeInventory();
+            }));
+
             gui.open(e.getPlayer());
         }
-    }
-
-    @EventHandler
-    public void onOpen(GUIOpenEvent e) {
-        Bukkit.broadcastMessage("open " + e.getGui() + " | " + e.getPlayer().getName());
-    }
-
-    @EventHandler
-    public void onClose(GUICloseEvent e) {
-        Bukkit.broadcastMessage("close " + e.getGui() + " | " + e.getPlayer().getName());
     }
 
     @Override

@@ -222,7 +222,7 @@ public class PagedGUI extends GUI {
             }
 
             if (next != null) {
-                GUITurnPageEvent event = new GUITurnPageEvent(this, holder, next, player);
+                GUITurnPageEvent event = new GUITurnPageEvent(this, player, next, holder);
                 Bukkit.getPluginManager().callEvent(event);
 
                 if (!event.isCancelled() && event.getNext() != null) {

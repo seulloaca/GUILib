@@ -28,7 +28,7 @@ public class GUITurnPageEvent extends GUIEvent implements Cancellable {
     private final Player player;
     private boolean cancel;
 
-    public GUITurnPageEvent(GUI gui, InventoryPageHolder previous, InventoryPageHolder next, Player player) {
+    public GUITurnPageEvent(GUI gui, Player player, InventoryPageHolder next, InventoryPageHolder previous) {
         super(gui, previous);
         this.player = player;
         this.next = next;

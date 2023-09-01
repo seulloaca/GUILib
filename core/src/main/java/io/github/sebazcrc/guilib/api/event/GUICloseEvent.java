@@ -18,7 +18,7 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 public class GUICloseEvent extends GUIEvent {
     private final InventoryCloseEvent bukkitEvent;
 
-    public GUICloseEvent(GUI gui, InventoryPageHolder inventory, InventoryCloseEvent bukkitEvent) {
+    public GUICloseEvent(GUI gui, InventoryCloseEvent bukkitEvent, InventoryPageHolder inventory) {
         super(gui, inventory);
         this.bukkitEvent = bukkitEvent;
     }

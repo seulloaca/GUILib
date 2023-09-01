@@ -21,7 +21,7 @@ public class GUIOpenEvent extends GUIEvent {
     @Getter
     private final int page;
 
-    public GUIOpenEvent(GUI gui, InventoryPageHolder inventory, int page, InventoryOpenEvent bukkitEvent) {
+    public GUIOpenEvent(GUI gui, InventoryOpenEvent bukkitEvent, InventoryPageHolder inventory, int page) {
         super(gui, inventory);
         this.bukkitEvent = bukkitEvent;
         this.page = page;

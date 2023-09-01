@@ -1,0 +1,4 @@
+main: io.github.sebazcrc.guilib.GUIPlugin
+version: 1.0
+name: GuiLib
+api-version: 1.13
