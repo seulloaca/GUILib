@@ -42,6 +42,35 @@ public class SinglePagedGUI extends GUI {
     }
 
     @Override
+    public void cageInventory(Material material) {
+        cageInventory(new ItemStack(material));
+    }
+
+    @Override
+    public void cageInventory(ItemStack item) {
+        for (int i = 0; i < 9; ) {
+            this.setItem(i, item);
+            i++;
+        }
+        for (int i = this.getSize() - 9; i < this.getSize(); ) {
+            this.setItem(i, item);
+            i++;
+        }
+
+        int last = (this.getSize() / 9 - 2);
+        if (last < 1) {
+            return;
+        }
+
+        for (int j = 9; j < 9 * last + 1; j += 9) {
+            this.setItem(j, item);
+        }
+        for (int j = 17; j < 9 * (last + 1); j+= 9) {
+            this.setItem(j, item);
+        }
+    }
+
+    @Override
     public void fillWith(Material material) {
         this.fillWith(new ItemStack(material));
     }

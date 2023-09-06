@@ -8,6 +8,7 @@
     <artifactId>GUILib</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
+    <url>https://github.com/SebazCRC/GUILib</url>
     <modules>
         <module>core</module>
         <module>plugin</module>
@@ -18,7 +19,6 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 
     <repositories>
         <repository>

@@ -75,6 +75,55 @@ public class PagedGUI extends GUI {
     }
 
     @Override
+    public void cageInventory(Material material) {
+        cageInventory(new ItemStack(material));
+    }
+
+    @Override
+    public void cageInventory(ItemStack item) {
+        for (int i = 0; i < getPagesSize(); i++) {
+            cageInventory(i, item);
+        }
+    }
+
+    /**
+     * Sets the given Material in the GUI border slots for the specified page index
+     * @param pageIndex Page index
+     * @param material Material
+     */
+    public void cageInventory(int pageIndex, Material material) {
+        cageInventory(pageIndex, new ItemStack(material));
+    }
+
+    /**
+     * Sets the given ItemStack in the GUI border slots for the specified page index
+     * @param pageIndex Page index
+     * @param item ItemStack
+     */
+    public void cageInventory(int pageIndex, ItemStack item) {
+        for (int i = 0; i < 9; ) {
+            this.setItem(pageIndex, i, item);
+            i++;
+        }
+        for (int i = this.getSize() - 9; i < this.getSize(); ) {
+            this.setItem(pageIndex, i, item);
+            i++;
+        }
+
+        int last = (this.getSize() / 9 - 2);
+        if (last < 1) {
+            return;
+        }
+
+        for (int j = 9; j < 9 * last + 1; j += 9) {
+            this.setItem(pageIndex, j, item);
+        }
+        for (int j = 17; j < 9 * (last + 1); j+= 9) {
+            this.setItem(pageIndex, j, item);
+        }
+    }
+
+    @Override
     public void fillWith(Material material) {
         this.fillWith(new ItemStack(material));
     }

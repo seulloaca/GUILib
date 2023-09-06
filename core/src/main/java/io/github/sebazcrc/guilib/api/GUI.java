@@ -168,6 +168,18 @@ public abstract class GUI implements Listener {
     public abstract GUI createInventory();
 
     /**
+     * Sets the given type in the GUI border slots
+     * @param material Material
+     */
+    public abstract void cageInventory(Material material);
+
+    /**
+     * Sets the given ItemStack in the GUI border slots
+     * @param item ItemStack
+     */
+    public abstract void cageInventory(ItemStack item);
+
+    /**
      * Fills the GUI with the given material
      * @param material Material
      */
