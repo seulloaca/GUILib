@@ -56,6 +56,7 @@ You have to initialize the GUICore in your plugins "onEnable" method
 ```java
 public void onEnable() {
     GUILibCore.init(this);
+}
 ```
 
 ## Creating a GUI
