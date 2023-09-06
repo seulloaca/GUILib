@@ -1,5 +1,6 @@
 # GUILib
  A lightweight spigot library to create GUIs
+You may find the JavaDoc documentation here: https://sebazcrc.github.io/GUILib/
 
 ## Installation
 ### Maven
