@@ -142,3 +142,4 @@ gui.setItem(1, 35, new ItemStack(Material.BEDROCK), (event -> {
 // Opens the GUI for the player
 gui.open(e.getPlayer());
 ```
+
