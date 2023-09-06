@@ -144,3 +144,5 @@ gui.setItem(1, 35, new ItemStack(Material.BEDROCK), (event -> {
 gui.open(e.getPlayer());
 ```
 
+You can also listen to custom Bukkit Events, you may find more information in the JavaDoc
+https://sebazcrc.github.io/GUILib/io/github/sebazcrc/guilib/api/event/package-summary.html
