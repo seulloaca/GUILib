@@ -34,20 +34,20 @@
 Repository
 ```xml
 <repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+    <repository>
+        <id>jitpack.io</id>
+	<url>https://jitpack.io</url>
+    </repository>
+</repositories>
 ```
 
 Dependency
 ```xml
 <dependency>
-	    <groupId>com.github.SebazCRC</groupId>
-	    <artifactId>GUILib</artifactId>
-	    <version>1.0.0</version>
-	</dependency>
+    <groupId>com.github.SebazCRC</groupId>
+    <artifactId>GUILib</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 ### Hook
